@@ -8,7 +8,7 @@ import {
 import React from "react";
 import LottieView from "lottie-react-native";
 
-const Onboarding = () => {
+const Onboarding = ({ navigation }) => {
   return (
     <>
       <View style={styles.onboardingContainer}>
@@ -24,7 +24,10 @@ const Onboarding = () => {
         <Text style={styles.onboardingText}>Crazy With Luis</Text>
       </View>
       <View style={styles.onboardingBtnContainer}>
-        <TouchableOpacity style={styles.onboardingBtn}>
+        <TouchableOpacity
+          style={styles.onboardingBtn}
+          onPress={() => navigation.navigate("Signup")}
+        >
           <Text
             style={{
               fontFamily: "Poppins_400Regular",
@@ -43,6 +46,7 @@ const Onboarding = () => {
             justifyContent: "flex-end",
             padding: 10,
           }}
+          onPress={() => navigation.navigate("Login")}
         >
           <Text
             style={{
@@ -54,7 +58,7 @@ const Onboarding = () => {
               fontSize: 14,
             }}
           >
-            Already Have An Account?
+            Already Have An Account?{" "}
             <Text style={{ color: "#025686" }}>Sign In</Text>
           </Text>
         </TouchableOpacity>
